@@ -9,6 +9,8 @@ class Car:
         self.current_speed += speed
         if self.current_speed < 0:
             self.current_speed = 0
+        elif self.current_speed > self.maximum_speed:
+            self.current_speed = self.maximum_speed
 
     def output(self):
         print(f"Registration_number: {self.registration_number}\n" 
@@ -24,10 +26,10 @@ car = Car("ABC-123", 142)
 car.accelerate(30)
 car.accelerate(70)
 car.accelerate(50)
-print(car.current_speed)
+print(f"Current speed after acceleration: {car.current_speed}km/h")
 
 car.accelerate(-200)
-print(car.current_speed)
+print(f"Current speed after brakes: {car.current_speed}km/h")
 
 
 
