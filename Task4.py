@@ -24,24 +24,14 @@ class Car:
 car1 = Car("ABC-1", random.randint(100, 200))
 car2 = Car("ABC-2", random.randint(100, 200))
 
-while car1.travelled_distance < 10000:
+while car1.travelled_distance < 10000 and car2.travelled_distance < 10000:
     if car1.current_speed < car1.maximum_speed:
         car1.accelerate(random.randint(10, 15))
-    distance = car1.drive(1)
-    if distance + car1.travelled_distance <= 10000:
-        car1.travelled_distance += distance
-    else:
-        break
-
-
-while car2.travelled_distance < 10000:
     if car2.current_speed < car2.maximum_speed:
         car2.accelerate(random.randint(10, 15))
-    distance = car2.drive(1)
-    if distance + car2.travelled_distance <= 10000:
-        car2.travelled_distance += distance
-    else:
-        break
+    car1.travelled_distance += car1.drive(1)
+    car2.travelled_distance += car2.drive(1)
+
 
 print(tabulate([['car1', car1.registration_number, car1.current_speed, car1.travelled_distance, car1.maximum_speed],
                ['car2', car2.registration_number, car2.current_speed, car2.travelled_distance, car2.maximum_speed]],
