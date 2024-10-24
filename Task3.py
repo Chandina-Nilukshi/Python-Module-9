@@ -1,5 +1,5 @@
 class Car:
-    def __init__(self, registration_number, maximum_speed, current_speed=0, travelled_distance=0):
+    def __init__(self, registration_number, maximum_speed, current_speed=0, travelled_distance=2000):
         self.registration_number = registration_number
         self.maximum_speed = maximum_speed
         self.current_speed = current_speed
@@ -30,8 +30,6 @@ car.accelerate(60)
 print(car.current_speed)
 print(car.drive(1.5))
 
-##car.accelerate(-200)
-##print(car.current_speed)
 
 
 
