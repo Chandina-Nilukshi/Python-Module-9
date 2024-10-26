@@ -23,8 +23,9 @@ class Car:
 
 car1 = Car("ABC-1", random.randint(100, 200))
 car2 = Car("ABC-2", random.randint(100, 200))
-
+hours = 0
 while car1.travelled_distance < 10000 and car2.travelled_distance < 10000:
+    hours += 1
     if car1.current_speed < car1.maximum_speed:
         car1.accelerate(random.randint(10, 15))
     if car2.current_speed < car2.maximum_speed:
